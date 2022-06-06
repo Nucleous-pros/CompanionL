@@ -1,37 +1,7 @@
 @extends('home')
 
 @section('content')
-<nav>
-    <div class="logo">
-  YOUR COMPANION
-    </div>
-    <input type="checkbox" id="click">
-    <label for="click" class="menu-btn">
-    <i class="fas fa-bars"></i>
-    </label>
-    <ul>
-       <li><a class="active" href="#">HOME</a></li>
-        <li><a href="signup.html">SIGN UP</a></li>
-        <li><a href="task.html">TASKS</a></li>
-       <li><a href="dashboard1.html">DASHBOARD</a></li>
-       <li><a href="login1.html">LOGIN</a></li>
-        <li><a href="logout.html">LOGOUT</a></li>
-        @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-       
-    </ul>
- </nav>
+  @include('layouts.navigation')
  <br>
  <br>
 
